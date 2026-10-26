@@ -69,6 +69,8 @@ class _SettingDownloadPageState extends State<SettingDownloadPage> {
               _buildArchiveDownloadIsolateCount(),
               _buildManageArchiveDownloadConcurrency(),
               _buildDeleteArchiveFileAfterDownload(),
+              _buildDownloadAsCbz(),
+              if (downloadSetting.downloadAsCbz.value) _buildDeleteImagesAfterCbz(),
               _buildRestore(),
               _buildRestoreTasksAutomatically(),
             ],
@@ -312,6 +314,24 @@ class _SettingDownloadPageState extends State<SettingDownloadPage> {
       title: Text('deleteArchiveFileAfterDownload'.tr),
       value: downloadSetting.deleteArchiveFileAfterDownload.value,
       onChanged: downloadSetting.saveDeleteArchiveFileAfterDownload,
+    );
+  }
+
+  Widget _buildDownloadAsCbz() {
+    return SwitchListTile(
+      title: Text('downloadAsCbz'.tr),
+      subtitle: Text('downloadAsCbzHint'.tr),
+      value: downloadSetting.downloadAsCbz.value,
+      onChanged: downloadSetting.saveDownloadAsCbz,
+    );
+  }
+
+  Widget _buildDeleteImagesAfterCbz() {
+    return SwitchListTile(
+      title: Text('deleteImagesAfterCbz'.tr),
+      subtitle: Text('deleteImagesAfterCbzHint'.tr),
+      value: downloadSetting.deleteImagesAfterCbz.value,
+      onChanged: downloadSetting.saveDeleteImagesAfterCbz,
     );
   }
 

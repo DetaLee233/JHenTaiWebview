@@ -936,6 +936,26 @@ Example 2: Block comments with a score not exceeding 10————Comment Score
       'permissionPermanentlyDeniedHint': 'Saving to album requires permission. Please go to system settings and grant full access to this app',
       'goToSetting': 'Go to settings',
       'other': 'Other',
+
+      /// web server & cbz
+      'webServer': 'Web Server',
+      'enableWebServer': 'Enable Web Server',
+      'enableWebServerHint': 'Browse and download with any browser on your network',
+      'webServerAddress': 'Address',
+      'webServerStopped': 'Stopped',
+      'webServerAllowRemote': 'Allow LAN Access',
+      'webServerAllowRemoteHint': 'When off, only this device can connect (127.0.0.1)',
+      'webServerPort': 'Port',
+      'webServerToken': 'Access Token',
+      'webServerTokenHint': 'Optional. Required for API access when set',
+      'webServerHint': 'The web UI shares the app\'s E-Hentai login and download queue. Add ?token=... to the URL when a token is configured.',
+      'webServerStartFailed': 'Failed to start web server, check the port',
+      'webServerOpenFailed': 'Failed to open browser',
+      'webServerInvalidPort': 'Invalid port',
+      'downloadAsCbz': 'Pack Downloads as CBZ',
+      'downloadAsCbzHint': 'Create a .cbz archive when a gallery finishes downloading',
+      'deleteImagesAfterCbz': 'Delete Image Folder After Packing',
+      'deleteImagesAfterCbzHint': 'Reading the gallery in the app will no longer be possible',
     };
   }
 }

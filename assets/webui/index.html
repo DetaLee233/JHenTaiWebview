@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101014">
+  <title>JHenTai</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <aside class="rail">
+      <div class="rail-logo">J</div>
+      <div class="rail-items">
+        <button class="rail-btn" data-tab="home" title="首页"><span class="mi mi-home"></span><span class="rail-label">首页</span></button>
+        <button class="rail-btn" data-tab="search" title="搜索"><span class="mi mi-search"></span><span class="rail-label">搜索</span></button>
+        <button class="rail-btn" data-tab="popular" title="热门"><span class="mi mi-whatshot"></span><span class="rail-label">热门</span></button>
+        <button class="rail-btn" data-tab="ranklist" title="排行"><span class="mi mi-bar_chart"></span><span class="rail-label">排行</span></button>
+        <button class="rail-btn" data-tab="favorite" title="收藏"><span class="mi mi-favorite"></span><span class="rail-label">收藏</span></button>
+        <button class="rail-btn" data-tab="watched" title="关注"><span class="mi mi-visibility"></span><span class="rail-label">关注</span></button>
+        <button class="rail-btn" data-tab="history" title="历史"><span class="mi mi-history"></span><span class="rail-label">历史</span></button>
+        <button class="rail-btn" data-tab="download" title="下载"><span class="mi mi-download"></span><span class="rail-label">下载</span></button>
+        <button class="rail-btn rail-settings" data-tab="setting" title="设置"><span class="mi mi-settings"></span><span class="rail-label">设置</span></button>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <section class="left-pane">
+        <div id="toolbar" class="toolbar"></div>
+        <div id="content" class="content"></div>
+      </section>
+
+      <div id="splitter" class="splitter" title="拖动调整宽度"></div>
+
+      <section id="right-pane" class="right-pane">
+        <div id="detail-pane" class="detail-pane">
+          <div class="blank-pane"></div>
+        </div>
+        <div id="reader-pane" class="reader-pane" hidden></div>
+      </section>
+    </div>
+
+    <nav class="bottom-nav">
+      <button class="rail-btn" data-tab="home"><span class="mi mi-home"></span></button>
+      <button class="rail-btn" data-tab="search"><span class="mi mi-search"></span></button>
+      <button class="rail-btn" data-tab="download"><span class="mi mi-download"></span></button>
+      <button class="rail-btn" data-tab="setting"><span class="mi mi-settings"></span></button>
+    </nav>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

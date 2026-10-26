@@ -945,6 +945,26 @@ class ru_RU {
       'permissionPermanentlyDeniedHint': 'Для сохранения в галерею требуется разрешение. Предоставьте приложению полный доступ в настройках системы',
       'goToSetting': 'Перейти в настройки',
       'other': 'Другое',
+
+      /// web server & cbz
+      'webServer': 'Веб-сервер',
+      'enableWebServer': 'Включить веб-сервер',
+      'enableWebServerHint': 'Просматривайте и скачивайте из браузера в вашей сети',
+      'webServerAddress': 'Адрес',
+      'webServerStopped': 'Остановлен',
+      'webServerAllowRemote': 'Разрешить доступ из локальной сети',
+      'webServerAllowRemoteHint': 'Если выключено, подключаться можно только с этого устройства (127.0.0.1)',
+      'webServerPort': 'Порт',
+      'webServerToken': 'Токен доступа',
+      'webServerTokenHint': 'Необязательно. Если задан, требуется для доступа к API',
+      'webServerHint': 'Веб-интерфейс использует вход в E-Hentai и очередь загрузок приложения. Если задан токен, добавьте ?token=... к URL.',
+      'webServerStartFailed': 'Не удалось запустить веб-сервер, проверьте порт',
+      'webServerOpenFailed': 'Не удалось открыть браузер',
+      'webServerInvalidPort': 'Неверный порт',
+      'downloadAsCbz': 'Упаковывать загрузки в CBZ',
+      'downloadAsCbzHint': 'Создавать архив .cbz после завершения загрузки галереи',
+      'deleteImagesAfterCbz': 'Удалять папку с изображениями после упаковки',
+      'deleteImagesAfterCbzHint': 'После удаления галерею нельзя будет читать в приложении',
     };
   }
 }

@@ -35,6 +35,12 @@ class DownloadSetting with JHLifeCircleBeanWithConfigStorage implements JHLifeCi
   RxBool deleteArchiveFileAfterDownload = true.obs;
   RxBool restoreTasksAutomatically = false.obs;
 
+  /// Pack every completed gallery into a `.cbz` archive next to its folder.
+  RxBool downloadAsCbz = false.obs;
+
+  /// Remove the image folder once the `.cbz` was created successfully.
+  RxBool deleteImagesAfterCbz = false.obs;
+
   @override
   ConfigEnum get configEnum => ConfigEnum.downloadSetting;
 
@@ -70,6 +76,8 @@ class DownloadSetting with JHLifeCircleBeanWithConfigStorage implements JHLifeCi
     manageArchiveDownloadConcurrency.value = map['manageArchiveDownloadConcurrency'] ?? manageArchiveDownloadConcurrency.value;
     deleteArchiveFileAfterDownload.value = map['deleteArchiveFileAfterDownload'] ?? deleteArchiveFileAfterDownload.value;
     restoreTasksAutomatically.value = map['restoreTasksAutomatically'] ?? restoreTasksAutomatically.value;
+    downloadAsCbz.value = map['downloadAsCbz'] ?? downloadAsCbz.value;
+    deleteImagesAfterCbz.value = map['deleteImagesAfterCbz'] ?? deleteImagesAfterCbz.value;
   }
 
   @override
@@ -92,6 +100,8 @@ class DownloadSetting with JHLifeCircleBeanWithConfigStorage implements JHLifeCi
       'manageArchiveDownloadConcurrency': manageArchiveDownloadConcurrency.value,
       'deleteArchiveFileAfterDownload': deleteArchiveFileAfterDownload.value,
       'restoreTasksAutomatically': restoreTasksAutomatically.value,
+      'downloadAsCbz': downloadAsCbz.value,
+      'deleteImagesAfterCbz': deleteImagesAfterCbz.value,
     });
   }
 
@@ -222,6 +232,18 @@ class DownloadSetting with JHLifeCircleBeanWithConfigStorage implements JHLifeCi
   Future<void> saveRestoreTasksAutomatically(bool value) async {
     log.debug('saveRestoreTasksAutomatically:$value');
     restoreTasksAutomatically.value = value;
+    await saveBeanConfig();
+  }
+
+  Future<void> saveDownloadAsCbz(bool value) async {
+    log.debug('saveDownloadAsCbz:$value');
+    downloadAsCbz.value = value;
+    await saveBeanConfig();
+  }
+
+  Future<void> saveDeleteImagesAfterCbz(bool value) async {
+    log.debug('saveDeleteImagesAfterCbz:$value');
+    deleteImagesAfterCbz.value = value;
     await saveBeanConfig();
   }
 

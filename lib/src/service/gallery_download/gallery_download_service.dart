@@ -56,6 +56,7 @@ import '../../utils/eh_spider_parser.dart';
 import '../../utils/snack_util.dart';
 import '../jh_service.dart';
 import '../path_service.dart';
+import '../web_server/cbz_service.dart';
 import 'download_path_resolver.dart';
 import 'eh_image_exception_matcher.dart';
 
@@ -1210,6 +1211,22 @@ class GalleryDownloadService extends GetxController with GridBasePageServiceMixi
       /// read page / detail page open.
       live.evictImages();
       update(['$galleryDownloadSuccessId::${gallery.gid}']);
+
+      final bool packAsCbz = downloadSetting.downloadAsCbz.isTrue || CbzService.instance.consumeGalleryCbzRequest(gallery.gid);
+      if (packAsCbz) {
+        final String galleryDirectory = DownloadPathResolver.computeGalleryDownloadAbsolutePath(live.toGalleryDownloadedData());
+        unawaited(() async {
+          try {
+            await CbzService.instance.packDirectory(
+              sourceDir: galleryDirectory,
+              outputPath: CbzService.cbzPathForDirectory(galleryDirectory),
+              deleteSource: downloadSetting.deleteImagesAfterCbz.isTrue,
+            );
+          } catch (e, stack) {
+            log.error('Auto pack CBZ failed, gid: ${gallery.gid}', e, stack);
+          }
+        }());
+      }
     }
 
     update(['$galleryDownloadProgressId::${gallery.gid}']);

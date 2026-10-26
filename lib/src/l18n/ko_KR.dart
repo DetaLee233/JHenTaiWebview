@@ -935,6 +935,26 @@ Example 2: Block comments with a score not exceeding 10————Comment Score
       'permissionPermanentlyDeniedHint': '앨범에 저장하려면 권한이 필요합니다. 시스템 설정에서 앱에 전체 액세스 권한을 부여해 주세요',
       'goToSetting': '설정으로 이동',
       'other': '기타',
+
+      /// web server & cbz
+      'webServer': '웹 서버',
+      'enableWebServer': '웹 서버 활성화',
+      'enableWebServerHint': '네트워크의 브라우저에서 탐색 및 다운로드',
+      'webServerAddress': '주소',
+      'webServerStopped': '중지됨',
+      'webServerAllowRemote': 'LAN 접근 허용',
+      'webServerAllowRemoteHint': '끄면 이 기기에서만 연결할 수 있습니다 (127.0.0.1)',
+      'webServerPort': '포트',
+      'webServerToken': '접근 토큰',
+      'webServerTokenHint': '선택 사항. 설정하면 API 호출에 토큰이 필요합니다',
+      'webServerHint': '웹 UI는 앱의 E-Hentai 로그인과 다운로드 큐를 공유합니다. 토큰을 설정한 경우 URL 뒤에 ?token=... 을 추가하세요.',
+      'webServerStartFailed': '웹 서버를 시작하지 못했습니다. 포트를 확인하세요',
+      'webServerOpenFailed': '브라우저를 열지 못했습니다',
+      'webServerInvalidPort': '잘못된 포트',
+      'downloadAsCbz': '다운로드를 CBZ로 패키징',
+      'downloadAsCbzHint': '갤러리 다운로드가 끝나면 .cbz 압축 파일을 만듭니다',
+      'deleteImagesAfterCbz': '패키징 후 이미지 폴더 삭제',
+      'deleteImagesAfterCbzHint': '삭제하면 앱에서 해당 갤러리를 읽을 수 없습니다',
     };
   }
 }

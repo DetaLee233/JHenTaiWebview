@@ -937,6 +937,26 @@ Example 2: Block comments with a score not exceeding 10————Comment Score
       'permissionPermanentlyDeniedHint': 'Salvar no álbum requer permissão. Vá às configurações do sistema e conceda acesso total ao aplicativo',
       'goToSetting': 'Ir para configurações',
       'other': 'Outro',
+
+      /// web server & cbz
+      'webServer': 'Servidor Web',
+      'enableWebServer': 'Ativar Servidor Web',
+      'enableWebServerHint': 'Navegue e baixe com qualquer navegador na sua rede',
+      'webServerAddress': 'Endereço',
+      'webServerStopped': 'Parado',
+      'webServerAllowRemote': 'Permitir Acesso à LAN',
+      'webServerAllowRemoteHint': 'Quando desativado, apenas este dispositivo pode conectar (127.0.0.1)',
+      'webServerPort': 'Porta',
+      'webServerToken': 'Token de Acesso',
+      'webServerTokenHint': 'Opcional. Necessário para acessar a API quando definido',
+      'webServerHint': 'A interface web usa o login do E-Hentai e a fila de downloads do aplicativo. Adicione ?token=... à URL quando um token estiver configurado.',
+      'webServerStartFailed': 'Falha ao iniciar o servidor web, verifique a porta',
+      'webServerOpenFailed': 'Falha ao abrir o navegador',
+      'webServerInvalidPort': 'Porta inválida',
+      'downloadAsCbz': 'Empacotar Downloads como CBZ',
+      'downloadAsCbzHint': 'Criar um arquivo .cbz quando uma galeria terminar de baixar',
+      'deleteImagesAfterCbz': 'Excluir Pasta de Imagens Após Empacotar',
+      'deleteImagesAfterCbzHint': 'Não será mais possível ler a galeria no aplicativo',
     };
   }
 }

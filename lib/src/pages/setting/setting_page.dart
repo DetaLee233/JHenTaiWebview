@@ -61,6 +61,11 @@ class SettingPage extends StatelessWidget {
               onTap: () => toRoute(Routes.settingPrefix + 'download'),
             ),
             ListTile(
+              leading: const Icon(Icons.language),
+              title: Text('webServer'.tr),
+              onTap: () => toRoute(Routes.settingWebServer),
+            ),
+            ListTile(
               leading: const Icon(Icons.electric_bolt),
               title: Text('performance'.tr),
               onTap: () => toRoute(Routes.settingPrefix + 'performance'),

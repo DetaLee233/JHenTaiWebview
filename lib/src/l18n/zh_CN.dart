@@ -941,6 +941,26 @@ favnote：匹配收藏备注
       'permissionPermanentlyDeniedHint': '保存到相册需要相应权限。请在系统设置中为应用开启完全访问权限',
       'goToSetting': '去设置',
       'other': '其他',
+
+      /// web server & cbz
+      'webServer': 'Web 服务器',
+      'enableWebServer': '启用 Web 服务器',
+      'enableWebServerHint': '在局域网内用浏览器浏览和下载',
+      'webServerAddress': '地址',
+      'webServerStopped': '已停止',
+      'webServerAllowRemote': '允许局域网访问',
+      'webServerAllowRemoteHint': '关闭后仅本机可访问 (127.0.0.1)',
+      'webServerPort': '端口',
+      'webServerToken': '访问令牌',
+      'webServerTokenHint': '可选。设置后调用 API 需要提供令牌',
+      'webServerHint': 'Web UI 会复用 App 的 E-Hentai 登录状态和下载队列。设置令牌后请在 URL 后添加 ?token=...',
+      'webServerStartFailed': '启动 Web 服务器失败，请检查端口',
+      'webServerOpenFailed': '无法打开浏览器',
+      'webServerInvalidPort': '端口无效',
+      'downloadAsCbz': '下载完成后打包为 CBZ',
+      'downloadAsCbzHint': '画廊下载完成后生成 .cbz 压缩包',
+      'deleteImagesAfterCbz': '打包后删除图片文件夹',
+      'deleteImagesAfterCbzHint': '删除后将无法在 App 内阅读该画廊',
     };
   }
 }

@@ -703,6 +703,37 @@ emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
     return _parseResponse(response, parser);
   }
 
+  /// Temporarily raise the connect timeout for a request. The web server can
+  /// be talking to slow image hosts while the UI must stay responsive; the
+  /// longer timeout is restored as soon as the task completes.
+  Future<T> runWithConnectTimeout<T>(Duration timeout, Future<T> Function() task) async {
+    final Duration? previous = _dio.options.connectTimeout;
+    _dio.options.connectTimeout = timeout;
+    try {
+      return await task();
+    } finally {
+      _dio.options.connectTimeout = previous;
+    }
+  }
+
+  /// Fetch raw bytes through the same cookie jar / proxy / domain-fronting
+  /// configuration the rest of the app uses. Used by the built-in web server
+  /// to proxy remote thumbnails that browsers cannot load directly.
+  Future<Response<List<int>>> requestBytes(
+    String url, {
+    CancelToken? cancelToken,
+    Duration? receiveTimeout,
+  }) {
+    return _dio.get<List<int>>(
+      url,
+      cancelToken: cancelToken,
+      options: Options(
+        responseType: ResponseType.bytes,
+        receiveTimeout: receiveTimeout,
+      ),
+    );
+  }
+
   Future<T> download<T>({
     required String url,
     required String path,
